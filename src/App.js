@@ -30,28 +30,39 @@ for (let i = 3; i <= nfireflys; i++) {
   dofirefly.leftFly = String(7 + Math.floor(Math.random() * 65)) + '%';
   fireflys.push(dofirefly);
 }
+
+
+
 //*** */
 
 function Firefly({ light, onFlyClick, idfly }) {
-  //ищу объект с нужным айдишником чтоб задать его атрибуты в светлячки
+ //не хочу мап. хочу искать строчку с нужными данными из рандома по индексу из пропсов в Board
   const flyarr = fireflys.find(function (item) {
-    return item.id === idfly;
-  });
+  return item.id === idfly;
+});
 
-  return (
-    <div key={flyarr.id} className={flyarr.moveFly} style={{ position: 'absolute', top: flyarr.topFly, left: flyarr.leftFly }}>
-      <button className={light} onClick={onFlyClick} ></button>
-    </div>
-  );
+//  хочу я возвращать под вызов ЕДИНИЧНУЮ структуру снужной строчкой одного светляка с хз каким номером
+//типа такого, но он не сработает пока не знает какой айди, я задаю его в боард в пропсах
+
+return (<div key={flyarr.id} className={flyarr.moveFly} style={{ position: 'absolute', top: flyarr.topFly, left: flyarr.leftFly }}>
+<button className={light} onClick={onFlyClick} ></button>
+</div>
+);
+// return (
+//   <>
+//       {fireflys.map((item, index) => (
+//         <div key={item.id} className={item.moveFly} style={{ position: 'absolute', top: item.topFly, left: item.leftFly }}>
+//         <button className={light} onClick={onFlyClick} ></button>
+//         </div>
+//       ))}
+//     </>
+// );
+//и уже в пропах хочу ему написать массив для вывода по всем номерам
 }
 
 export default function Board() {
   const [Fly, setFly] = useState(Array(nfireflys).fill('turnOff'));
   const [count, setcount] = useState(0);
-
-
-
-
 
   function handleClick(i) {
     if (Fly[i] === 'turnOn') {
@@ -87,19 +98,26 @@ export default function Board() {
         <div className='score'>
           <h1 className="status">{status}</h1>
           <h3>{count}/9</h3>
-
         </div>
-        <Firefly idfly={1} light={Fly[0]} onFlyClick={() => handleClick(0)} />
-        <Firefly idfly={2} light={Fly[1]} onFlyClick={() => handleClick(1)} />
-        <Firefly idfly={3} light={Fly[2]} onFlyClick={() => handleClick(2)} />
-        <Firefly idfly={4} light={Fly[3]} onFlyClick={() => handleClick(3)} />
-        <Firefly idfly={5} light={Fly[4]} onFlyClick={() => handleClick(4)} />
-        <Firefly idfly={6} light={Fly[5]} onFlyClick={() => handleClick(5)} />
-        <Firefly idfly={7} light={Fly[6]} onFlyClick={() => handleClick(6)} />
-        <Firefly idfly={8} light={Fly[7]} onFlyClick={() => handleClick(7)} />
-        <Firefly idfly={9} light={Fly[8]} onFlyClick={() => handleClick(8)} />
+        { [...Array(9)].map((item, index) => <Firefly key={index} idfly={index+1} light={Fly[index]} onFlyClick={() => handleClick(index)}  /> ) }
       </div>
       </div>
     </>
   );
 }
+
+        // я знаю что существует такая форма записи
+
+        //вместо
+    // <Parent>
+    //   <Component />
+    //   <Component />
+    //   <Component />
+    // </Parent>
+    //пишут так
+    // <Parent>
+    // { [...Array(n)].map((item, index) => <Component key={index} /> ) }
+    // </Parent>
+
+//и вот 101 строчка - это то, что я хотела: применить мап именно тут - в самой доске, чтоб не писать их тридцать раз для 30 светляков
+    
