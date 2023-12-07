@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+}
+
+/*fonts*/
+@font-face {
+  font-family: 'Aclonica';
+  src: local('Aclonica Regular');
+  src: url('/Aclonica-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  font-family: 'Aclonica';
+  margin: 20px;
+  padding: 0;
+  color: #91931b;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #3A3C45;
+text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.83);
+font-family: 'Aclonica';
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+opacity: 0.8;
+  
+}
+
+h2, h3 {
+margin: 0;
+color: #3A3C45;
+text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.53);
+font-family: 'Aclonica';
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+opacity: 0.8;
+}
+
+h3{
+  font-size: 24px;
+  opacity: 0.9;
+  color: rgba(217, 217, 217, 0.60);
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.83);
+font-family: 'Aclonica';
+}
+
+
+
+ul {
+  padding-inline-start: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: black;
+}
+
+
+
+
+.dance1, .dance2, .dance3, .dance4, .dance5, .dance6, .dancelon1, .dancelon2 {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+
+.dance1 {
+
+  offset-path: path('M132.342 6.99141C140.026 14.6755 140.227 28.619 134.017 45.1729C127.823 61.6804 115.317 80.5846 97.9509 97.9509C80.5845 115.317 61.6804 127.823 45.1729 134.017C28.6189 140.227 14.6755 140.026 6.99138 132.342C-0.692766 124.658 -0.893955 110.714 5.31667 94.1604C11.5099 77.6529 24.016 58.7487 41.3823 41.3824C58.7487 24.016 77.6529 11.5099 94.1603 5.31669C110.714 -0.893924 124.658 -0.692737 132.342 6.99141Z');
+  animation: round 25s ease-in infinite alternate;
+}
+
+@keyframes round {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.dance2 {
+
+  offset-path: path('M30 0.999996C49 3.5 98.5 56.5 98.5 56.5C98.5 56.5 115.5 72 138 106.5C160.5 141 119 133 119 133C119 133 91.5 112.5 49.5 106.5C7.50003 100.5 -4.83768 61.9562 3.5 46.5C11.8377 31.0437 11 -1.5 30 0.999996Z');
+  animation: eight 10s linear infinite alternate-reverse;
+}
+
+@keyframes eight {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+
+.dance3 {
+
+  offset-path: path('M75.5 82.0001C75.5 82.0001 75.2343 33.4353 57.5 17.5C46.4531 7.57372 15.5 17.5001 15.5 35.5C15.5 53.4999 -1.49999 58 1.00001 70.0001C3.50001 82.0001 -6 118 15.5 118C37 118 67 0.49997 103 0.5C139 0.50003 137 25.5 145 57.0001C153 88.5001 156 103.5 145 118C134 132.5 107 145.5 86.5 150.5C66 155.5 39.5 134.5 57.5 118C75.5 101.5 75.5 82.0001 75.5 82.0001Z');
+  animation: eight2 34s linear infinite alternate-reverse;
+}
+
+@keyframes eight2 {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.dance4 {
+
+  offset-path: path('M1.49995 10C41.2202 -6.42293 133.5 1.99992 114.5 20C95.4999 38.0001 -8.50005 34.5 1.49995 53.5C11.4999 72.5 63.4999 55.5 62 72.5C60.5 89.5 30.5 107.5 11.4999 134C-7.5001 160.5 95.4999 144.5 95.4999 144.5M95.4999 144.5C95.4999 144.5 64.4999 131.5 95.4999 107.5C126.5 83.5 126.5 107.5 126.5 107.5C126.5 107.5 126.5 148 95.4999 144.5Z');
+  animation: left-rigt 23s ease-in-out infinite alternate;
+}
+
+@keyframes left-rigt {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.dance5 {
+
+  offset-path: path('M128 14.9999C113.5 -2.99999 87.5378 -5.5708 73 14.9999C74.1691 30.3768 170.497 37.6578 143.5 56.9999C116.503 76.342 37.5623 83.6631 56 56.9999C52.9174 54.7545 62.2888 36.3815 34.5 22.4999C6.71112 8.61824 -6.27495 98.6964 4.49997 100.5C28.1273 115.047 57.3331 122.686 99.5 77.4999C145.664 29.4068 142.932 77.0857 128 100.5C106.164 123.94 120.521 82.8781 34.5 128C-9.63616 165.238 48.2621 148.844 80 143.5C111.738 138.156 142.5 32.9998 128 14.9999Z');
+  animation: haos 30s ease-in-out infinite alternate;
+}
+
+@keyframes haos {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.dancelon1 {
+
+  offset-path: path('M57.8625 56.473C141.992 23.3827 165.002 65.1053 144.869 115.46C124.735 165.815 234.215 138.063 249.851 191.712C284.568 226.496 305.125 233.81 343.329 229.838C456.612 224.027 500.108 204.471 551.856 148.55C608.122 83.6447 612.338 54.7337 582.776 13.3117C282.097 -36.7296 303.065 73.1986 205.27 170.85C111.101 201.946 77.7455 188.88 29.1001 148.55C-0.381279 134.883 -26.2674 89.5634 57.8625 56.473Z');
+  animation: lonly1 41s ease-in-out infinite alternate;
+
+}
+
+@keyframes lonly1 {
+  100% {
+    offset-distance: 100%;
+  }
+
+}
+
+.dancelon2 {
+
+  offset-path: path('M642 171.5C691 210 572.5 234.5 506.5 290C440.5 345.5 332.5 291.5 304.5 270C276.5 248.5 304.5 214.5 332.5 214.5C360.5 214.5 412.5 224 423.5 198C434.5 172 406.5 110.5 373 133C339.5 155.5 373 228 345.5 235C318 242 358.5 256.5 345.5 316.5C332.5 376.5 291.5 328 267.5 338C243.5 348 191.5 201.5 170 259C148.5 316.5 238.846 248.26 247 214.5C255.077 181.062 189 166.5 200 140C211 113.5 247 110 267.5 124.5C288 139 279.5 156 267.5 171.5C255.5 187 204 204 188 214.5C172 225 71.5 232 92 198C112.5 164 55.5 111.5 29.5 133C3.50007 154.5 -14.5 75.4999 21.5 44C57.5 12.5 69 95.5 112.5 29.5C156 -36.5 172.5 27.5 211 55C249.5 82.5 274.5 20 280.5 61C286.5 102 332.5 95.5 355 75.4999C377.5 55.4999 368.5 21 446.5 11.5C446.5 11.5 481 -1.50009 565 44C649 89.5001 499 66.5 519.5 95.5C540 124.5 558 133 582 124.5C606 116 593 133 642 171.5Z');
+  animation: lonly2 70s linear infinite alternate;
+}
+
+@keyframes lonly2 {
+  100% {
+    offset-distance: 100%;
+  }
+
+}
+
+.flylight {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  border: none;
+
+}
+
+.turnOff {
+  padding: 0;
+  background-color: #FBFE04;
+  height: 4px;
+  width: 6px;
+  border-radius: 100px;
+  border: none;
+  opacity: 10%;
+  cursor: pointer;
+}
+
+.turnOff::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tip {
+  padding: 0;
+  background-color: #FBFE04;
+  border: none;
+  height: 4px;
+  width: 6px;
+  border-radius: 100px;
+  outline:   blueviolet solid 3px;
+  outline-offset: 30px;
+  opacity: 15%;
+  cursor: pointer;
+}
+
+.tip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.turnOn {
+  padding: 0;
+  background-color: blue;
+  height: 3px;
+  width: 5px;
+  border-radius: 100px;
+  background-color: #FBFE04;
+  border: none;
+  opacity: 0.9;
+  border: 1px solid #FBFE04;
+  box-shadow: 8px 8px 100px 10px #FBFE04;
+  animation-name: flyOnlight;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  cursor: pointer;
+}
+
+@keyframes flyOnlight {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 0.9;
+  }
+
+}
+
+.container {
+  width: 960px;
+  height: 514px;
+  
+}
+
+
+
+
+.board {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  border: 3px solid #3A3C45;
+  background: url('../1forest111.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.darkness {
+  background-color: rgba(0, 0, 0, 0.60);
+  width: 100%;
+  height: 100%;
+}
+
+.night {
+  background-color: rgba(0, 0, 0, 0.60);
+  width: 100%;
+  height: 100%;
+  animation: night 1.5s linear forwards;
+}
+
+@keyframes night {
+  100% {
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+}
+
+.button {
+  width: 150px;
+  height: 28px;
+ background: transparent;
+  color: #3A3C45;
+  
+  font-family: 'Aclonica';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.8;
+  border: 2px solid #3A3C45;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  text-shadow: none;
+  
+}
+
+.button:hover {
+
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.25), 0 0 20px rgba(255, 255, 255, .15);
+  
+}
+
+
+
+
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
