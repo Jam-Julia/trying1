@@ -14,11 +14,11 @@ function randomInteger(min, max) {
 }
 
 //Количество светляков
-let nfireflis = 9;
+const nFireflis = 20;
 //Количество вариантов танца
 let dances = 5;
 //пихаю рандомных светляков в массив
-for (let i = 3; i <= nfireflis; i++) {
+for (let i = 3; i <= nFireflis; i++) {
   let dofirefli = {};
   dofirefli.id = i;
   dofirefli.moveFly = 'dance' + String(Math.floor(randomInteger(1, 6)));
