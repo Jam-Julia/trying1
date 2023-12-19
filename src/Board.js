@@ -2,43 +2,44 @@ import { useState } from 'react';
 import { Firefli } from './Firefli.js';
 //cjplftv ntvyjne
 let dark = 'darkness';
-
+const nFireflis = 9;
 
 export default function Board() {
 
-  let nfireflis = 9;
 
-  const [Fly, setFly] = useState(Array(nfireflis).fill('turnOff'));
-  const [count, setcount] = useState(0);
+
+  const [fly, setFly] = useState(Array(nFireflis).fill('turnOff'));
+  const [count, setCount] = useState(0);
 
   function LittleTip(i) {
 
-    let firstOff = Fly.indexOf('turnOff')
-    if (firstOff === -1) { return; }
-    const a = Fly.slice();
-    a[firstOff] = 'tip';
-    setFly(a);
-    console.log(Fly);
+    const firstOff = fly.indexOf('turnOff')
+    if (firstOff !== -1) {
+      const a = fly.slice();
+      a[firstOff] = 'tip';
+      setFly(a);
+    }
+
   }
 
 
 
   function handleClick(i) {
-    if (Fly[i] === 'turnOn') {
+    if (fly[i] === 'turnOn') {
       return;
     }
-    const nextFly = Fly.slice();
+    const nextFly = fly.slice();
     nextFly[i] = 'turnOn';
     setFly(nextFly);
-    setcount(count + 1);
+    setCount(count + 1);
   }
 
   function calculateWinner() {
     let tap = 0;
-    for (let i in Fly) {
-      if (Fly[i] === 'turnOn') { tap++ }
+    for (let i in fly) {
+      if (fly[i] === 'turnOn') { tap++ }
     }
-    if (nfireflis === tap) { return true; }
+    if (nFireflis === tap) { return true; }
     return false;
   }
   /**/
@@ -62,7 +63,7 @@ export default function Board() {
       <div className="board">
         <div className={dark}>
 
-          {[...Array(nfireflis)].map((item, index) => <Firefli key={index} idfly={index + 1} light={Fly[index]} onFlyClick={() => handleClick(index)} />)}
+          {[...Array(nFireflis)].map((item, index) => <Firefli key={index} idfly={index + 1} light={fly[index]} onFlyClick={() => handleClick(index)} />)}
         </div>
 
       </div>
@@ -72,18 +73,4 @@ export default function Board() {
   );
 }
 
-// я знаю что существует такая форма записи
-
-//вместо
-// <Parent>
-//   <Component />
-//   <Component />
-//   <Component />
-// </Parent>
-//пишут так
-// <Parent>
-// { [...Array(n)].map((item, index) => <Component key={index} /> ) }
-// </Parent>
-
-//и вот 101 строчка - это то, что я хотела: применить мап именно тут - в самой доске, чтоб не писать их тридцать раз для 30 светляков
 
